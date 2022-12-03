@@ -114,13 +114,13 @@ function multiplyArray(multArr){
   let a = testArray[0];
   let b = testArray[1];
   let c = testArray[2];
-  let productWords= `The numbers ${0},${1},${2} have a product of ${multiply(a,b,c)}.`;
+  let productWords= `The numbers ${a},${b},${c} have a product of ${multiply(a,b,c)}.`;
   let array = [multiply(a,b,c) , productWords];
   return array;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
