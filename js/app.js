@@ -9,11 +9,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 
-function sum(a, b) {
-  let mysum= a + b;
-  let myarray= [mysum, `The sum of ${a} and ${b} is ${mysum}.`];
-  console.log(myarray);
-  return (myarray);
+function sum(a, b, c) {
+  let mysum = a + b + c ;
+  //let myarray= [mysum, `The sum of ${a} and ${b} is ${mysum}.`];
+  //console.log(myarray);
+  return (mysum);
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -30,15 +30,15 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) {
-  let myProduct = a * b ;
-  let arraysSuck = [myProduct,`The product of ${a} and ${b} is ${myProduct}.` ];
-  console.log(arraysSuck);
-  return (arraysSuck);
+function multiply(a, b, c) {
+  let product = a * b * c ;
+  //let arraysSuck = [myProduct,`The product of ${a} and ${b} is ${myProduct}.` ];
+  //console.log(arraysSuck);
+  return (product);
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+//testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -54,12 +54,17 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+function sumAndMultiply(a, b, c) {
+  sum(a,b,c);
+  multiply(a,b,c);
+  let thisGameTalksTooMuch = `${a} and ${b} and ${c} sum to ${sum(a,b,c)}.`;
+  let iAmSoProductive = `The product of ${a} and ${b} and ${c} is ${multiply(a,b,c)}.`;
+  let arraysReallySuck = [sum(a,b,c),multiply(a,b,c),thisGameTalksTooMuch,iAmSoProductive ];
+  return arraysReallySuck;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
