@@ -9,15 +9,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 
-//function sum(a, b, c)
-// let mysum = a + b + c ;
-//let myarray= [mysum, `The sum of ${a} and ${b} is ${mysum}.`];
-//console.log(myarray);
-// return (mysum);
-//
+function sum(a, b){
+  let mysum = a + b;
+  let myarray= [mysum, `The sum of ${a} and ${b} is ${mysum}.`];
+  return myarray;
+}
+
 
 // Here is the test for sum(); uncomment it to run it
-//testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -30,15 +30,14 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b, c) {
-  let product = a * b * c ;
-  //let arraysSuck = [myProduct,`The product of ${a} and ${b} is ${myProduct}.` ];
-  //console.log(arraysSuck);
-  return (product);
+function multiply(a, b){
+  let product = a * b;
+  let arraysSuck = [product,`The product of ${a} and ${b} is ${product}.` ];
+  return (arraysSuck);
 }
 
 // Here is the test for multiply(); uncomment it to run it
-//testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -54,18 +53,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-//function sumAndMultiply(a, b, c)
-//sum(a,b,c);
-//multiply(a,b,c);
-//let thisGameTalksTooMuch = `${a} and ${b} and ${c} sum to ${sum(a,b,c)}.`;
-//let iAmSoProductive = `The product of ${a} and ${b} and ${c} is ${multiply(a,b,c)}.`;
-//let arraysReallySuck = [sum(a,b,c),multiply(a,b,c),thisGameTalksTooMuch,iAmSoProductive ];
-//return arraysReallySuck;
-
+function sumAndMultiply(a, b, c){
+  let totalSum =sum(sum(a,b)[0],c) [0];
+  let totalProduct = multiply(multiply(a,b)[0],c)[0];
+  let thisGameTalksTooMuch = `${a} and ${b} and ${c} sum to ${totalSum}.`;
+  let iAmSoProductive = `The product of ${a} and ${b} and ${c} is ${totalProduct}.`;
+  let arraysReallySuck = [totalSum,totalProduct,thisGameTalksTooMuch,iAmSoProductive ];
+  return arraysReallySuck;
+}
 
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-//testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -82,20 +81,22 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-//function sumArray(testArray)
-//let a = testArray[0];
-//let b = testArray[1];
-//let c = testArray[2];
-//let sumWords= `${a},${b},${c} was passed in as an array of numbers, and ${sum(a,b,c)} is their sum.`;
-//let array = [sum(a,b,c), sumWords];
-//return array;
-//
+function sumArray(sumArr){
+  let a = testArray[0];
+  let b = testArray[1];
+  let c = testArray[2];
+  let firstSum= sum(sumArr[0],sumArr[1])[0];
+  let finalSum= sum(firstSum, sumArr[2])[0];
+  let sumWords= `${a},${b},${c} was passed in as an array of numbers, and ${finalSum} is their sum.`;
+  return [finalSum, sumWords];
+}
+
 
 
 
 // Here is the test for sumArray(); uncomment it to run it
 
-//testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -114,8 +115,10 @@ function multiplyArray(multArr){
   let a = testArray[0];
   let b = testArray[1];
   let c = testArray[2];
-  let productWords= `The numbers ${a},${b},${c} have a product of ${multiply(a,b,c)}.`;
-  let array = [multiply(a,b,c) , productWords];
+  let firstProduct= multiply(multArr[0],multArr[1])[0];
+  let finalProduct= multiply(firstProduct, multArr[2])[0];
+  let productWords= `The numbers ${a},${b},${c} have a product of ${finalProduct}.`;
+  let array = [finalProduct , productWords];
   return array;
 }
 
